@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Nav() {
+export function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   const toggleNavbar = () => {
@@ -10,7 +10,7 @@ function Nav() {
   return (
     <header className="">
       <nav className="">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -91,5 +91,3 @@ function Nav() {
     </header>
   )
 }
-
-export default Nav
