@@ -8,7 +8,7 @@ export function Nav() {
   }
 
   return (
-    <header className="">
+    <header className="relative z-[1]">
       <nav className="">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
           <a
