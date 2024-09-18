@@ -8,9 +8,9 @@ export function Nav() {
   }
 
   return (
-    <header className="relative z-[1]">
+    <header className="sticky top-0">
       <nav className="">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse"

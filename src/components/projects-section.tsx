@@ -2,6 +2,7 @@ import inorbitImage from '../assets/in-orbit-image.png'
 import pinterestImage from '../assets/pinterest-image.png'
 import vogliatecImage from '../assets/vogliatec-image.png'
 import { CircleCheck, ChevronRight } from 'lucide-react'
+import { Card } from './ui/card'
 
 const portfolioProjects = [
   {
@@ -47,21 +48,21 @@ export function ProjectsSection() {
     <section className="pb-16 lg:py-24">
       <div className="container mx-auto p-4">
         <div className="flex justify-center">
-          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-center bg-clip-text text-transparent">
+          <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-center bg-clip-text text-transparent mix-blend-difference">
             Real-world Results
           </p>
         </div>
-        <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">
+        <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 mix-blend-difference">
           Featured Projects
         </h2>
-        <p className="text-center md:text-lg lg:text-xl text-gray-50/60 mt-4 max-w-md mx-auto">
+        <p className="text-center md:text-lg lg:text-xl text-gray-50/60 mt-4 max-w-md mx-auto mix-blend-difference">
           See how i transformed concepts into engaging digital experiences.
         </p>
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {portfolioProjects.map((project, projectIndex) => (
-            <div
+            <Card
               key={project.title}
-              className="bg-gray-800 rounded-3xl z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none sticky"
+              className="px-8 pt-8 pb-0 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky"
               style={{
                 top: `calc(52px + ${projectIndex * 40}px`,
               }}
@@ -102,11 +103,11 @@ export function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 rounded-lg lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="mt-8 -mb-4 md:mb-1 rounded-lg lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   />
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

@@ -1,32 +1,14 @@
-import { useEffect, useState } from 'react'
 import emoji from '../assets/emoji-png-1018.png'
 import rocket from '../assets/rocket-ship.png'
 
-export function HeroSection() {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
-  const [isHovered, setIsHovered] = useState(false)
-  const size = isHovered ? 224 : 80
+// Definindo o tipo de prop do HeroSection
+interface HeroSectionProps {
+  setIsHovered: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-  // Atualiza a posição do cursor
-  const updateCursorPosition = (e: MouseEvent) => {
-    const limitedX = e.pageX
-    const limitedY = e.pageY - 56
-
-    setCursorPosition({ x: limitedX, y: limitedY })
-  }
-
-  useEffect(() => {
-    // Adiciona o listener de movimento do mouse
-    window.addEventListener('mousemove', updateCursorPosition)
-
-    return () => {
-      // Remove o listener quando o componente desmonta
-      window.removeEventListener('mousemove', updateCursorPosition)
-    }
-  }, [])
-
+export function HeroSection({ setIsHovered }: HeroSectionProps) {
   return (
-    <div className="relative z-0 py-12 mix-blend-difference overflow-x-clip">
+    <div className="relative py-12 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div className="size-[620px] hero-ring" />
         <div className="size-[820px] hero-ring" />
@@ -34,25 +16,13 @@ export function HeroSection() {
         <div className="size-[1220px] hero-ring" />
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="size-[700px] animate-spin [animation-duration:30s] mix-blend-difference">
+          <div className="size-[700px] animate-spin [animation-duration:30s]">
             <div className="inline-flex">
               <img src={rocket} alt="rocket" className="size-16" />
             </div>
           </div>
         </div>
       </div>
-      <div
-        className="hidden md:block bg-gray-50 absolute transition-transform duration-200 ease-in-out mix-blend-difference"
-        style={{
-          top: `${cursorPosition.y - size / 2}px`,
-          left: `${cursorPosition.x - size / 2}px`,
-          width: `${size}px`,
-          height: `${size}px`,
-          borderRadius: '50%',
-          pointerEvents: 'none',
-          transform: `scale(${size / 188})`, // Ajusta o tamanho relativo ao tamanho inicial
-        }}
-      />
       <div className="p-4 max-w-screen-xl mx-auto mix-blend-difference">
         <div className="flex flex-col items-center gap-2">
           <img
