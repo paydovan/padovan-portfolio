@@ -8,6 +8,12 @@
     }
 }
 
+@layer utilities {
+    .container {
+        @apply lg:max-w-5xl;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;

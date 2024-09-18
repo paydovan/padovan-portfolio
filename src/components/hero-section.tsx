@@ -27,16 +27,17 @@ export function HeroSection() {
 
   return (
     <div className="relative z-0 py-12 mix-blend-difference overflow-x-clip">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div className="size-[620px] hero-ring" />
         <div className="size-[820px] hero-ring" />
         <div className="size-[1020px] hero-ring" />
         <div className="size-[1220px] hero-ring" />
-      </div>
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="size-[700px] animate-spin [animation-duration:30s] mix-blend-difference">
-          <div className="inline-flex">
-            <img src={rocket} alt="rocket" className="size-16" />
+
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="size-[700px] animate-spin [animation-duration:30s] mix-blend-difference">
+            <div className="inline-flex">
+              <img src={rocket} alt="rocket" className="size-16" />
+            </div>
           </div>
         </div>
       </div>
@@ -62,7 +63,9 @@ export function HeroSection() {
             onMouseLeave={() => setIsHovered(false)}
           />
           <div className="bg-gray-900 border border-gray-800 flex justify-center items-center gap-2 px-4 py-1 rounded">
-            <div className="bg-green-500 w-2.5 h-2.5 rounded-full animate-pulse" />
+            <div className="bg-green-500 size-2.5 rounded-full relative">
+              <div className="bg-green-500 absolute inset-0 rounded-full animate-ping" />
+            </div>
             <div className="text-sm">Available for new projects</div>
           </div>
         </div>
