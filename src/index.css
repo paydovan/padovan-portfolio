@@ -6,6 +6,10 @@
     .hero-ring {
         @apply absolute mix-blend-difference inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-purple-300/5 shadow-[0_0_80px_inset] shadow-purple-300/5
     }
+    .gpu-smooth {
+        -webkit-font-smoothing: antialiased;
+        -webkit-transform: translateZ(0);
+    }
 }
 
 @layer utilities {
@@ -16,13 +20,13 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
  
 /* Track */
 ::-webkit-scrollbar-track {
     background: #030712;
-    border-radius: 5px;
+    border-radius: 8px;
 }
  
 /* Handle */
