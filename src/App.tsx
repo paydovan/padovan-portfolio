@@ -4,6 +4,7 @@ import { Nav } from './components/nav'
 import { ProjectsSection } from './components/projects-section'
 import { TapeSection } from './components/tape-section'
 import { About } from './components/about'
+import { Services } from './components/services'
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -27,6 +28,7 @@ function App() {
       <ProjectsSection />
       <TapeSection />
       <About />
+      <Services />
 
       {/* Cursor personalizado */}
       <div

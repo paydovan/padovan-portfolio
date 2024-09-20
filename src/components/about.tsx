@@ -11,7 +11,7 @@ export function About() {
   return (
     <section className="container mx-auto p-4">
       <div className="text-center py-4">
-        <h3 className="text-xl tracking-widest font-semibold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+        <h3 className="text-xl lg:text-2xl tracking-widest font-semibold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
           About Me
         </h3>
         <h2 className="text-3xl font-serif text-gray-50 font-semibold mt-2">
