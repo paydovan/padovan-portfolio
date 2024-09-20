@@ -7,7 +7,7 @@ import { FaNodeJs, FaGithub } from 'react-icons/fa'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { CardTechnology } from './ui/card-technology'
 
-export function Services() {
+export function About() {
   return (
     <section className="container mx-auto p-4">
       <div className="text-center py-4">
