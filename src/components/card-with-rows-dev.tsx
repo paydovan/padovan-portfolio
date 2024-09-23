@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { Boxes } from './ui/boxes-core'
 import { cn } from '../lib/utils'
 import { FaDesktop } from 'react-icons/fa'
