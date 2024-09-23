@@ -6,6 +6,8 @@ import { TapeSection } from './components/tape-section'
 import { About } from './components/about'
 import { Services } from './components/services'
 import { Cta } from './components/cta'
+import { Form } from './components/form'
+import { Footer } from './components/footer'
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
@@ -28,9 +30,12 @@ function App() {
       <HeroSection setIsHovered={setIsHovered} />
       <ProjectsSection />
       <TapeSection />
-      <About />
       <Services />
       <Cta />
+      <About />
+      <TapeSection />
+      <Form />
+      <Footer />
 
       {/* Cursor personalizado */}
       <div

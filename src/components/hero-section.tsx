@@ -14,7 +14,7 @@ export function HeroSection({ setIsHovered }: HeroSectionProps) {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <div className="relative py-12 overflow-x-clip">
+    <div className="relative py-28 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
         <div className="size-[620px] hero-ring" />
         <div className="size-[820px] hero-ring" />

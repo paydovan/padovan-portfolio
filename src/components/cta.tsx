@@ -3,7 +3,7 @@ import background from '../assets/background.svg'
 export function Cta() {
   return (
     <section className="relative container mx-auto p-4">
-      <div className="py-32">
+      <div className="py-56">
         <div className="">
           <h2 className="text-5xl text-center font-medium">
             Pronto para levar{' '}
