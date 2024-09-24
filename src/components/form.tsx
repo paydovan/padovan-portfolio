@@ -4,21 +4,27 @@ import { z } from 'zod'
 import emailjs from '@emailjs/browser'
 
 const sendEmailSchema = z.object({
-  name: z.string(),
+  name: z
+    .string({ message: 'Digite um nome válido' })
+    .min(1, { message: 'Esse campo precisa ser preenchido!' }),
   email: z
     .string()
     .min(1, { message: 'Esse campo precisa ser preenchido!' })
     .email('Isso não é um email válido.'),
   whatsapp: z
     .string()
-    .min(11, { message: 'Digite o numero com o ddd' })
+    .min(11, { message: 'Digite um numero válido!' })
     .max(13, { message: 'Digite um numero válido!' }),
 })
 
 type SendEmailType = z.infer<typeof sendEmailSchema>
 
 export function Form() {
-  const { register, handleSubmit } = useForm<SendEmailType>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SendEmailType>({
     resolver: zodResolver(sendEmailSchema),
   })
 
@@ -47,13 +53,17 @@ export function Form() {
   }
 
   return (
-    <section className="container mx-auto p-4 mt-8">
+    <section className="container mx-auto p-4 mt-8" id="form">
       <div className="py-8 text-center">
         <h2 className="text-4xl font-bold">
-          Vamos conversar sobre seu projeto!
+          Vamos conversar sobre{' '}
+          <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            seu projeto!
+          </span>
         </h2>
         <p className="mt-4 text-white/55 lg:text-xl">
-          Preencha o formulário abaixo e entrarei em contato contigo.
+          Envie suas informações pelo formulário abaixo e vamos juntos dar vida
+          ao seu projeto.
         </p>
       </div>
       <div className="">
@@ -67,18 +77,27 @@ export function Form() {
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
             {...register('name')}
           />
+          {errors.name && (
+            <p className="text-red-500 text-sm">{errors.name.message}</p>
+          )}
           <input
             type="email"
             placeholder="Digite seu melhor email."
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
             {...register('email')}
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email.message}</p>
+          )}
           <input
             type="text"
             placeholder="Digite seu whatsapp."
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
             {...register('whatsapp')}
           />
+          {errors.whatsapp && (
+            <p className="text-red-500 text-sm">{errors.whatsapp.message}</p>
+          )}
           <div className="group flex justify-center mt-4">
             <button
               type="submit"
