@@ -49,14 +49,14 @@ export function ProjectsSection() {
       <div className="container mx-auto p-4">
         <div className="flex justify-center">
           <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-center bg-clip-text text-transparent mix-blend-difference">
-            Real-world Results
+            Resultados reais
           </p>
         </div>
         <h2 className="font-serif text-3xl md:text-5xl text-center mt-6 mix-blend-difference">
-          Featured Projects
+          Projetos em destaque
         </h2>
         <p className="text-center md:text-lg lg:text-xl text-gray-50/60 mt-4 max-w-md mx-auto mix-blend-difference">
-          See how i transformed concepts into engaging digital experiences.
+          Veja como transformei conceitos em experiências digitais envolventes.
         </p>
         <div className="flex flex-col mt-10 md:mt-20 gap-20">
           {portfolioProjects.map((project, projectIndex) => (

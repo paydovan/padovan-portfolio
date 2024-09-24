@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const TypingEffect = () => {
   const [text, setText] = useState('')
   const fullText =
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi fuga consectetur asperiores ex repellendus unde error.'
+    'Combinando inovação em Design, expertise em Desenvolvimento Frontend, criamos experiências digitais que elevam sua marca e encantam seu público.'
 
   useEffect(() => {
     let index = 0

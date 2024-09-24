@@ -48,7 +48,7 @@ export function HeroSection({ setIsHovered }: HeroSectionProps) {
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping" />
             </div>
-            <div className="text-sm">Available for new projects</div>
+            <div className="text-sm">Disponível para novos projetos</div>
           </div>
         </div>
         <div
@@ -63,9 +63,9 @@ export function HeroSection({ setIsHovered }: HeroSectionProps) {
             animate={isInView ? { filter: 'blur(0px)', opacity: 1 } : {}}
             transition={{ duration: 1.2 }}
           >
-            Building Exceptional{' '}
+            Construindo Melhor{' '}
             <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              User Experience
+              Experiência do Usuário
             </span>
           </motion.h1>
           {/* <p className="mt-4 text-center text-white/60 md:text-lg lg:text-xl">

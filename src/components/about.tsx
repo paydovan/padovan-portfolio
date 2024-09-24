@@ -21,13 +21,13 @@ export function About() {
     <section className="container mx-auto p-4 relative" id="about">
       <div className="text-center py-4">
         <h3 className="text-xl lg:text-2xl tracking-widest font-semibold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-          About Me
+          Sobre mim
         </h3>
         <h2 className="text-3xl font-serif text-gray-50 font-semibold mt-2">
-          A Glimpse Into My World
+          Um vislumbre do meu mundo
         </h2>
         <p className="md:text-lg lg:text-xl text-gray-50/60 mt-4 max-w-md mx-auto">
-          Learn more about who i am, what i do, and what inspires me.
+          Saiba mais sobre quem sou, o que faço e o que me inspira.
         </p>
       </div>
       <motion.div
@@ -42,10 +42,10 @@ export function About() {
           <div className="flex flex-col">
             <div className="inline-flex items-center gap-2">
               <Rocket size={28} className="text-purple-500" />
-              <h3 className="font-serif text-3xl">My reads</h3>
+              <h3 className="font-serif text-3xl">Minhas leituras</h3>
             </div>
             <p className="text-sm text-gray-50/60 mt-2 md:text-base lg:text-lg">
-              Explore the books shaping my perspectives
+              Explore os livros que moldam minhas perspectivas
             </p>
             <div className="mx-auto mt-8">
               <img
