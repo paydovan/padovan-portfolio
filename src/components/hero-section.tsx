@@ -1,4 +1,4 @@
-import emoji from '../assets/emoji-png-1018.png'
+import emoji from '../assets/emoji-png-1018.webp'
 import rocket from '../assets/rocket-ship.png'
 import { motion, useInView } from 'framer-motion'
 import React from 'react'

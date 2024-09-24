@@ -1,6 +1,6 @@
-import inorbitImage from '../assets/in-orbit-image.png'
-import pinterestImage from '../assets/pinterest-image.png'
-import vogliatecImage from '../assets/vogliatec-image.png'
+import inorbitImage from '../assets/in-orbit-image.webp'
+import pinterestImage from '../assets/pinterest-image.webp'
+import vogliatecImage from '../assets/vogliatec-image.webp'
 import { CircleCheck, ChevronRight } from 'lucide-react'
 import { Card } from './ui/card'
 
@@ -45,7 +45,7 @@ const portfolioProjects = [
 
 export function ProjectsSection() {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projects">
       <div className="container mx-auto p-4">
         <div className="flex justify-center">
           <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 text-center bg-clip-text text-transparent mix-blend-difference">

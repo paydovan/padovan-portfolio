@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import logo from '../assets/logo.svg'
 
 export function Nav() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -9,17 +10,13 @@ export function Nav() {
 
   return (
     <header className="relative">
-      <nav className="">
+      <nav id="nav">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
-            href="#"
+            href="."
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
-              alt="Logo"
-            />
+            <img src={logo} className="h-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
               padovan.io
             </span>
@@ -53,7 +50,7 @@ export function Nav() {
             <ul className="font-medium bg-gray-900 md:bg-transparent flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
               <li>
                 <a
-                  href="#"
+                  href="."
                   className="block py-2 px-3 hover:bg-gray-800 md:hover:bg-transparent rounded md:bg-transparent md:p-0"
                   aria-current="page"
                 >
@@ -62,7 +59,7 @@ export function Nav() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#projects"
                   className="block py-2 px-3 rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0  md:p-0"
                 >
                   Projetos
@@ -70,18 +67,18 @@ export function Nav() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#services"
                   className="block py-2 px-3 rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0  md:p-0"
                 >
-                  Sobre
+                  Serviços
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#about"
                   className="block py-2 px-3 rounded hover:bg-gray-800 md:hover:bg-transparent md:border-0  md:p-0"
                 >
-                  Serviços
+                  Sobre
                 </a>
               </li>
             </ul>

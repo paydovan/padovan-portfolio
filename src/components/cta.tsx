@@ -1,4 +1,4 @@
-import background from '../assets/background.svg'
+import background from '../assets/background.webp'
 
 export function Cta() {
   return (

@@ -1,6 +1,6 @@
 import { Rocket } from 'lucide-react'
 import { Card } from './ui/card'
-import livro1 from '../assets/livro1.png'
+import livro1 from '../assets/livro1.webp'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { FaReact } from 'react-icons/fa6'
 import { FaNodeJs, FaGithub } from 'react-icons/fa'
@@ -18,7 +18,7 @@ export function About() {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1])
   return (
-    <section className="container mx-auto p-4 relative">
+    <section className="container mx-auto p-4 relative" id="about">
       <div className="text-center py-4">
         <h3 className="text-xl lg:text-2xl tracking-widest font-semibold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
           About Me
