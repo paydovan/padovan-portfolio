@@ -44,7 +44,7 @@ function App() {
 
       {/* Cursor personalizado */}
       <div
-        className="absolute transition-transform duration-200 ease-in-out mix-blend-difference"
+        className="absolute transition-transform duration-200 ease-in-out mix-blend-difference hidden md:block"
         style={{
           top: `${cursorPosition.y - size / 2}px`,
           left: `${cursorPosition.x - size / 2}px`,
