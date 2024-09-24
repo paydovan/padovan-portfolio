@@ -1,7 +1,19 @@
 import { Boxes } from './ui/boxes-core'
 import { cn } from '../lib/utils'
+import type { ReactNode } from 'react'
 
-export function BackgroundBox({ title, icon, description }) {
+// Definindo a interface para as propriedades
+interface BackgroundBoxProps {
+  title: string // O tipo esperado para 'title'
+  icon: ReactNode // O tipo esperado para 'icon', permitindo qualquer nó React
+  description: string // O tipo esperado para 'description'
+}
+
+export function BackgroundBox({
+  title,
+  icon,
+  description,
+}: BackgroundBoxProps) {
   return (
     <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col rounded-lg p-8 gap-4">
       <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />

@@ -6,6 +6,7 @@ interface CardProps extends Omit<MotionProps, 'style'> {
   // Omit para remover 'style'
   className?: string
   children: ReactNode
+  style?: React.CSSProperties // Adicionando a propriedade style
 }
 
 export const Card = ({ className, children, ...other }: CardProps) => {
