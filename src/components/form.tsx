@@ -1,4 +1,51 @@
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import emailjs from '@emailjs/browser'
+
+const sendEmailSchema = z.object({
+  name: z.string(),
+  email: z
+    .string()
+    .min(1, { message: 'Esse campo precisa ser preenchido!' })
+    .email('Isso não é um email válido.'),
+  whatsapp: z
+    .string()
+    .min(11, { message: 'Digite o numero com o ddd' })
+    .max(13, { message: 'Digite um numero válido!' }),
+})
+
+type SendEmailType = z.infer<typeof sendEmailSchema>
+
 export function Form() {
+  const { register, handleSubmit } = useForm<SendEmailType>({
+    resolver: zodResolver(sendEmailSchema),
+  })
+
+  function handleSendEmail(data: SendEmailType, e: any) {
+    console.log(data)
+
+    const templateParams = {
+      from_name: data.name,
+      email: data.email,
+      whatsapp: data.whatsapp,
+    }
+
+    emailjs
+      .send(
+        import.meta.env.VITE_SERVICE_ID_EMAILJS,
+        import.meta.env.VITE_TEMPLATE_ID_EMAILJS,
+        templateParams,
+        import.meta.env.VITE_PUBLIC_KEY_EMAILJS
+      )
+      .then(() => {
+        e.target.reset()
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <section className="container mx-auto p-4 mt-8">
       <div className="py-8 text-center">
@@ -10,27 +57,27 @@ export function Form() {
         </p>
       </div>
       <div className="">
-        <form className="flex flex-col gap-4 max-w-sm lg:max-w-xl mx-auto">
+        <form
+          onSubmit={handleSubmit(handleSendEmail)}
+          className="flex flex-col gap-4 max-w-sm lg:max-w-xl mx-auto"
+        >
           <input
             type="text"
             placeholder="Digite seu nome."
-            name="name"
-            id="name"
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
+            {...register('name')}
           />
           <input
             type="email"
-            name="email"
-            id="email"
             placeholder="Digite seu melhor email."
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
+            {...register('email')}
           />
           <input
             type="text"
-            name="telefone"
-            id="telefone"
             placeholder="Digite seu whatsapp."
             className="py-2 px-4 rounded-md border border-white/15 bg-white/10 backdrop-blur"
+            {...register('whatsapp')}
           />
           <div className="group flex justify-center mt-4">
             <button

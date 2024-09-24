@@ -6,10 +6,19 @@ import { FaReact } from 'react-icons/fa6'
 import { FaNodeJs, FaGithub } from 'react-icons/fa'
 import { RiTailwindCssFill } from 'react-icons/ri'
 import { CardTechnology } from './ui/card-technology'
+import { useScroll, motion, useTransform } from 'framer-motion'
+import { useRef } from 'react'
 
 export function About() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['0 1', '1.5 1'],
+  })
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1])
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1])
   return (
-    <section className="container mx-auto p-4">
+    <section className="container mx-auto p-4 relative">
       <div className="text-center py-4">
         <h3 className="text-xl lg:text-2xl tracking-widest font-semibold bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
           About Me
@@ -21,7 +30,14 @@ export function About() {
           Learn more about who i am, what i do, and what inspires me.
         </p>
       </div>
-      <div className="flex flex-col gap-4 lg:flex-row">
+      <motion.div
+        className="flex flex-col gap-4 lg:flex-row"
+        ref={ref}
+        style={{
+          scale: scaleProgress,
+          opacity: opacityProgress,
+        }}
+      >
         <Card className="h-[320px]">
           <div className="flex flex-col">
             <div className="inline-flex items-center gap-2">
@@ -73,7 +89,7 @@ export function About() {
             </div>
           </div>
         </Card>
-      </div>
+      </motion.div>
     </section>
   )
 }

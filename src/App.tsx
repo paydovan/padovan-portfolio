@@ -15,8 +15,12 @@ function App() {
   const size = isHovered ? 224 : 80
 
   const updateCursorPosition = (e: MouseEvent) => {
-    const limitedX = e.pageX
-    const limitedY = e.pageY
+    const docHeight = document.documentElement.scrollHeight // Altura total do documento
+    const limitedX = Math.min(
+      window.innerWidth - size / 2,
+      Math.max(size / 2, e.pageX)
+    )
+    const limitedY = Math.min(docHeight - size / 2, Math.max(size / 2, e.pageY)) // Limitar a Y com base na altura total do documento
     setCursorPosition({ x: limitedX, y: limitedY })
   }
 
@@ -24,6 +28,7 @@ function App() {
     window.addEventListener('mousemove', updateCursorPosition)
     return () => window.removeEventListener('mousemove', updateCursorPosition)
   }, [])
+
   return (
     <div className="relative">
       <Nav />
@@ -39,7 +44,7 @@ function App() {
 
       {/* Cursor personalizado */}
       <div
-        className="hidden md:block absolute transition-transform duration-200 ease-in-out mix-blend-difference"
+        className="absolute transition-transform duration-200 ease-in-out mix-blend-difference"
         style={{
           top: `${cursorPosition.y - size / 2}px`,
           left: `${cursorPosition.x - size / 2}px`,
