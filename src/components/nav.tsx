@@ -23,6 +23,9 @@ export function Nav() {
           </a>
           <button
             onClick={toggleNavbar}
+            onMouseDown={event => {
+              event.preventDefault()
+            }}
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 cursor-pointer"
           >
