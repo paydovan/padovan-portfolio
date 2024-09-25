@@ -24,7 +24,7 @@ export function Nav() {
           <button
             onClick={toggleNavbar}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 cursor-pointer"
             aria-expanded={isNavOpen}
           >
             <span className="sr-only">Open main menu</span>
