@@ -10,7 +10,7 @@ export function Nav() {
   }
 
   return (
-    <header>
+    <header className="">
       <nav id="nav">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
@@ -24,7 +24,7 @@ export function Nav() {
           </a>
           <button
             onClick={toggleNavbar}
-            onMouseDown={event => {
+            onTouchStart={event => {
               event.preventDefault()
             }}
             type="button"
