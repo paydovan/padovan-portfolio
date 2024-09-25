@@ -13,14 +13,14 @@ export function Nav() {
     <header className="p-4 flex justify-between items-center max-w-screen-xl mx-auto relative">
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <img src={logo} alt="logo" className="w-14" />
+        <img src={logo} alt="logo" className="h-8" />
         <span className="text-2xl font-semibold">padovan.io</span>
       </div>
 
       {/* Ícone do menu (visível apenas no mobile) */}
-      <div className="lg:hidden">
-        <FaBars size={24} className="cursor-pointer" onClick={toggleNavbar} />
-      </div>
+      <button className="lg:hidden" type="button" onClick={toggleNavbar}>
+        <FaBars size={24} className="cursor-pointer" />
+      </button>
 
       {/* Menu de navegação (para telas grandes) */}
       <nav className="hidden lg:flex gap-4">
