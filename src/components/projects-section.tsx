@@ -14,7 +14,7 @@ const portfolioProjects = [
       { title: 'Projeto full-stack node/react' },
       { title: 'Consumindo a api com react query' },
     ],
-    link: 'lalala',
+    link: 'https://react-in-orbit.vercel.app/',
     image: inorbitImage,
   },
   {
