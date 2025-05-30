@@ -25,7 +25,7 @@ export function Services() {
           <BackgroundBox
             title="Desenvolvimento"
             icon={<FaDesktop size={56} />}
-            description="Desenvolvo sites, blogs e e-commerces personalizados, com design moderno e otimização para SEO, focados em destacar sua marca e gerar resultados."
+            description="Como desenvolvedor full-stack, crio sistemas web completos e personalizados — desde plataformas robustas e aplicações interativas até sites, blogs e e-commerces — todos com design moderno, otimização para SEO e foco em destacar sua marca e gerar resultados."
           />
         </div>
       </div>
